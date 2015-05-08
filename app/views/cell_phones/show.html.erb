@@ -1,0 +1,82 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @cell_phone.brand %>
+</p>
+
+<p>
+  <strong>Network:</strong>
+  <%= @cell_phone.network %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @cell_phone.number %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @cell_phone.owner %>
+</p>
+<p>
+  <strong>Id: </strong>
+  <%= @cell_phone.id %>
+</p>
+<p> 
+<strong>Contacts</strong> <%= link_to 'Add Contact', new_contact_path %>
+<p id "notice"> <%=notice %> </p>
+<ul>
+<% @cell_phone.contacts.each do |contact| %>
+	<p>
+  	    <strong>Name:</strong>
+    	    <%= contact.name %>
+		<br>
+  	    <strong>Number:</strong>
+  	    <%= contact.number %>
+	    <%= link_to 'Edit', edit_contact_path(contact) %>
+	    <%= link_to 'Delete Contact', contact, method: :delete, data: { confirm: 'Are you sure?' } %>
+	</p>
+<% end %>
+</ul>
+</p>
+<p>
+<strong> Applications </strong>
+ <%= link_to 'Add App', new_application_path %>
+<ul>
+<% @cell_phone.applications.each do |app| %>
+	<p>
+	    <strong> <%= app.name %> </strong>
+		<br>
+	    <%= app.description %>
+	<br>
+	<%= link_to 'Delete Application', app, method: :delete, data: { confirm: 'Are you sure?' } %>
+	</p>
+<% end %>
+</ul>
+</p>
+<%= link_to 'Edit', edit_cell_phone_path(@cell_phone) %> |
+<%= link_to 'Back', cell_phones_path %>
+
+<style>
+	body {
+  margin-left: 100px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.42857143;
+  color: #ebebeb;
+  background-color: #2b3e50;
+}
+
+a:hover,
+a:focus {
+  color: #df691a;
+  text-decoration: underline;
+}
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+</style>

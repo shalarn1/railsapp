@@ -1,0 +1,56 @@
+<style>
+        body {
+  margin-left: 100px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.42857143;
+  color: #ebebeb;
+  background-color: #2b3e50;
+}
+
+a:hover,
+a:focus {
+  color: #df691a;
+  text-decoration: underline;
+}
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+</style>
+
+<%= form_for(@cell_phone) do |f| %>
+  <% if @cell_phone.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cell_phone.errors.count, "error") %> prohibited this cell_phone from being saved:</h2>
+
+      <ul>
+      <% @cell_phone.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :brand %><br>
+    <%= f.text_field :brand %>
+  </div>
+  <div class="field">
+    <%= f.label :network %><br>
+    <%= f.text_field :network %>
+  </div>
+  <div class="field">
+    <%= f.label :number %><br>
+    <%= f.number_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :owner %><br>
+    <%= f.text_field :owner %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

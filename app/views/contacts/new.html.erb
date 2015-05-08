@@ -1,0 +1,28 @@
+<style>
+        body {
+  margin-left: 100px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.42857143;
+  color: #ebebeb;
+  background-color: #2b3e50;
+}
+
+a:hover,
+a:focus {
+  color: #df691a;
+  text-decoration: underline;
+}
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+</style>
+
+<h1>New Contact</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', contacts_path %>

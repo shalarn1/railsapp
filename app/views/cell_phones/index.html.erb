@@ -1,0 +1,63 @@
+
+	<style>
+        body {
+  margin-left: 100px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.42857143;
+  color: #ebebeb;
+  background-color: #2b3e50;
+}
+
+a:hover,
+a:focus {
+  color: #df691a;
+  text-decoration: underline;
+}
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+</style>
+
+<body>
+<div class="main_page">
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Cell Phones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th>Network</th>
+      <th>Number</th>
+      <th>Owner</th>
+      <th>Cell Phone Id </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cell_phones.each do |cell_phone| %>
+      <tr>
+        <td><%= cell_phone.brand %></td>
+        <td><%= cell_phone.network %></td>
+        <td><%= cell_phone.number %></td>
+        <td><%= cell_phone.owner %></td>
+	<td><%= cell_phone.id %></td>
+        <td><%= link_to 'Show', cell_phone %></td>
+        <td><%= link_to 'Edit', edit_cell_phone_path(cell_phone) %></td>
+        <td><%= link_to 'Destroy', cell_phone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cell phone', new_cell_phone_path %>
+</div>
+</body>

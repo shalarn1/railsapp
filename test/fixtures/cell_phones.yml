@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand: MyString
+  network: MyString
+  number: 1
+  owner: MyString
+
+two:
+  brand: MyString
+  network: MyString
+  number: 1
+  owner: MyString
